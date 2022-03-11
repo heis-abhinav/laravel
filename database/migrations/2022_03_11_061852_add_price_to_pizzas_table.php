@@ -15,10 +15,10 @@ class AddPriceToPizzasTable extends Migration
     {
         Schema::table('pizzas', function (Blueprint $table) {
             //
-            $table->Integer('price');
+           // $table->Integer('price');
         });
     }
-
+ 
     /**
      * Reverse the migrations.
      *
