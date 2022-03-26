@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\AuthRestaurantController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,6 +21,7 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/locate', function(){
-    return '<script>alert("hi")</script>';
-});
+
+Route::post('restaurant-login', [App\Http\Controllers\Auth\AuthRestaurantController::class, 'restaurantLogin'])->name('login.restaurant');
+
+Route::get('logintorestaurant', [App\Http\Controllers\Auth\AuthRestaurantController::class, 'index'])->name('logintorestaurant');

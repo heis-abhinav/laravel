@@ -48,7 +48,7 @@
                         </div>
                     </li>
                 @endguest
-                <li class="nav-item"><a class="nav-link" href="{{ url('locate') }}">{{ __('Locate') }}</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{ route('logintorestaurant') }}">{{ __('Restaurant') }}</a></li>
             </ul>
         </div>
     </div>

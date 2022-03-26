@@ -12,7 +12,7 @@ use Illuminate\Support\Facades\Auth;
 class AuthRestaurantController extends Controller
 {
     public function index(){
-        return view(auth.loginrestaurant);
+        return view('auth.loginrestaurant');
     }
 
     public function restaurantLogin(Request $request){
@@ -30,7 +30,7 @@ class AuthRestaurantController extends Controller
     }
 
     public function registerRestaurant(){
-        return view(auth.registerRestaurant);
+        return view('auth.registerRestaurant');
     }
 
     public function restaurantRegistration(Request $request){
