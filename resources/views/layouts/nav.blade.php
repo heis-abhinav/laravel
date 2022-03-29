@@ -30,6 +30,7 @@
                         </li>
                     @endif
                 @else
+                    <li class="nav-item"><a class="nav-link" href="{{ route('add-item') }}">{{ __('Add Item') }}</a></li>
                     <li class="nav-item dropdown">
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                             {{ Auth::user()->name }}
@@ -48,7 +49,8 @@
                         </div>
                     </li>
                 @endguest
-                <li class="nav-item"><a class="nav-link" href="{{ route('logintorestaurant') }}">{{ __('Restaurant') }}</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">{{ __('Restaurant') }}</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">{{ __('Register Restaurant') }}</a></li>
             </ul>
         </div>
     </div>

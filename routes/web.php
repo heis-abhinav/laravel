@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\AuthRestaurantController;
+//use App\Http\Controllers\Restaurant\AuthRestaurantController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,6 +22,5 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 
-Route::post('restaurant-login', [App\Http\Controllers\Auth\AuthRestaurantController::class, 'restaurantLogin'])->name('login.restaurant');
-
-Route::get('logintorestaurant', [App\Http\Controllers\Auth\AuthRestaurantController::class, 'index'])->name('logintorestaurant');
+Route::get('/add-item', [App\Http\Controllers\ItemsController::class, 'add_item_page'])->name('add-item')->middleware('auth');
+Route::post('/store',[App\Http\Controllers\ItemsController::class, 'store']);
