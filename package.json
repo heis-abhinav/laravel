@@ -24,6 +24,8 @@
         "vue-template-compiler": "^2.6.12"
     },
     "dependencies": {
-        "vform": "^2.1.2"
+        "bootstrap-icons": "^1.8.1",
+        "vform": "^2.1.2",
+        "vue-router": "^3.5.3"
     }
 }
