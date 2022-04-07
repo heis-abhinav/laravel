@@ -38,6 +38,13 @@ class ItemsController extends Controller
         
     }
 
+    public function getHotProducts(){
+        $items = Items::orderBy('id', 'desc')
+            ->get()
+            ->toArray();
+        return response()->json($items);
+    }
+    
     public function store(Request $request){
 
         if($request->avatar){
@@ -70,7 +77,7 @@ class ItemsController extends Controller
         if($request->avatar){
 
             $image_name = time().'.' . explode('/', explode(':', substr($request->avatar, 0, strpos($request->avatar, ';')))[1])[1];
-            \Image::make($request->avatar)->save(public_path('img/').$image_name);
+            \Image::make($request->avatar)->save(public_path('img/store/products/').$image_name);
             $request->merge(['avatar' => $image_name]);
            
         }
