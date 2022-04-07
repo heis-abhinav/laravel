@@ -19,10 +19,10 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
-<body>
+<body style="background-color:  #2874a6  ;">
     <div id="app">
             @yield('navigation')
-        <main class="py-1">
+        <main >
             @yield('content')
         </main>
         <div id = "navigation"></div>
