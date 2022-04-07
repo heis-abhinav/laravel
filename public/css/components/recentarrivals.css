@@ -1,0 +1,28 @@
+.card.ra-title{
+		width: 50%;
+		box-shadow: rgba(0, 0, 0, 1) 0px 19px 43px;
+		border-top-left-radius: 37px 140px;
+	  border-top-right-radius: 23px 130px;
+	  border-bottom-left-radius: 110px 19px;
+	  border-bottom-right-radius: 120px 24px;
+	  text-align: center;
+}
+
+.row.recentarrivals{
+	width: 90vw; 
+	height: 20rem;
+	overflow-y: hidden;
+	/*margin: 4px, 4px;*/
+   /*padding: 4px;*/
+   padding-top: 0px;
+   padding: 0px;
+   transform: rotate(-1deg);
+   /*border: solid 3px #6e7491;*/
+   /*clip-path: polygon(53% 10%, 100% 0, 100% 43%, 100% 100%, 68% 100%, 0 100%, 0 78%, 0 22%, 26% 12%);*/
+	/*border-radius: 20px;*/
+	border-top-left-radius: 37px 140px;
+  border-top-right-radius: 23px 130px;
+  border-bottom-left-radius: 110px 19px;
+  border-bottom-right-radius: 70px 24px;
+  /*box-shadow: rgba(0, 0, 0, 1) 0px 19px 43px;*/
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;}
