@@ -18,7 +18,7 @@
 </template>
 
 <script>
-    import panelmethods from '../../adminpanel'
+    import panelmethods from '../../sidepanel'
     export default {
             methods: {
                 openNav : function ()
