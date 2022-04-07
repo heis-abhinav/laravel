@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('store.home');
+    return redirect()->route('home');
 });
 
 Auth::routes();
@@ -29,4 +29,6 @@ Route::get('/admin/viewitems', [App\Http\Controllers\ItemsController::class , 'v
 Route::get('/admin/viewitem/{id}', [App\Http\Controllers\ItemsController::class , 'view_item']);
 Route::get('/admin/item/{id}', [App\Http\Controllers\ItemsController::class , 'view_item_page']);
 
-Route::get('/admin/dashboard', [App\Http\Controllers\ItemsController::class , 'view_admin_dashboard']);
+Route::get('/admin/dashboard', [App\Http\Controllers\ItemsController::class , 'view_admin_dashboard'])->name('dashboard');
+
+Route::get('/gethotpicks', [App\Http\Controllers\ItemsController::class, 'getHotProducts'])->middleware('guest');
