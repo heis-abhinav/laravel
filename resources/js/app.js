@@ -8,7 +8,6 @@ require('./bootstrap');
 window.axios = require("axios");
 window.Vue = require('vue').default;
 import App from './App.vue';
-import Store from './Store.vue';
 import VueRouter from 'vue-router';
 //import { createRouter } from 'vue-router'
 Vue.use(VueRouter)
@@ -58,8 +57,3 @@ if (document.getElementById('items')) {
    });
    
 }
-const store = new Vue({
-   el : '#navigation',
-   router: adminrouter,
-   render: h => h(Store)
-});
