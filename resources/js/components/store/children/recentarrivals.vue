@@ -1,48 +1,14 @@
 <template>
 	<div class="container-recentarrivals">
-		<div class="card ra-title"><h3>{{message}}</h3></div>
+		<link rel="stylesheet" type="text/css" href="/css/components/recentarrivals.css">
+		<div class="card ra-title"><h3>{{title}}</h3></div>
 			<div class="row recentarrivals flex-row flex-nowrap">
-					<div class="card col-4" >
-						<img src="/img/store/products/scientist.png" class="card-img-top" alt="...">
+					<div class="card col-4" v-for= "product in products" :key="product.id">
+						<img class="card-img-top" :src="get_avatar(product.image)" alt="Card image cap">
 					  <div class="card-body">
-					    <h5 class="card-title">Card title</h5>
-					    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-					    <a href="#" class="btn btn-primary">Go somewhere</a>
-					  </div>
-					</div>
-					<div class="card col-4"  >
-					  <div class="card-body">
-					    <h5 class="card-title">Card title</h5>
-					    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-					    <a href="#" class="btn btn-primary">Go somewhere</a>
-					  </div>
-					</div>
-					<div class="card col-4" >
-					  <div class="card-body">
-					    <h5 class="card-title">Card title</h5>
-					    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-					    <a href="#" class="btn btn-primary">Go somewhere</a>
-					  </div>
-					</div>
-					<div class="card col-4" >
-					  <div class="card-body">
-					    <h5 class="card-title">Card title</h5>
-					    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-					    <a href="#" class="btn btn-primary">Go somewhere</a>
-					  </div>
-					</div>
-					<div class="card col-4" >
-					  <div class="card-body">
-					    <h5 class="card-title">Card title</h5>
-					    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-					    <a href="#" class="btn btn-primary">Go somewhere</a>
-					  </div>
-					</div>
-					<div class="card col-4" >
-					  <div class="card-body">
-					    <h5 class="card-title">Card title</h5>
-					    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-					    <a href="#" class="btn btn-primary">Go somewhere</a>
+					    <h5 class="card-title">{{product.name}}</h5>
+					    <p class="card-text">{{product.description}}</p>
+					    <a href="#" class="btn btn-primary">Button</a>
 					  </div>
 					</div>
 			</div>
@@ -59,41 +25,24 @@
 	export default{
 		data(){
 			return{
-				message: "Recent Arrivals"
+				title: "Recent Arrivals",
+				products : []
 			}
+		},
+		created(){
+			axios
+				.get('/getrecentarrivals')
+				.then(response=> {
+					this.products = response.data
+				});
+		},
+		methods: {
+			get_avatar(image){
+               let photo = (image > 100) ? image : "/img/store/products/"+ image;
+               return photo;
+            },
 		}
 		
 
 	}
 </script>
-
-<style type="text/css">
-	.card.ra-title{
-		width: 50%;
-		box-shadow: rgba(0, 0, 0, 1) 0px 19px 43px;
-		border-top-left-radius: 37px 140px;
-	  border-top-right-radius: 23px 130px;
-	  border-bottom-left-radius: 110px 19px;
-	  border-bottom-right-radius: 120px 24px;
-	  text-align: center;
-	}
-
-	.row.recentarrivals{
-		width: 90vw; 
-		height: 20rem;
-		overflow-y: hidden;
-    	/*margin: 4px, 4px;*/
-       /*padding: 4px;*/
-       padding-top: 0px;
-       padding: 0px;
-       transform: rotate(-1deg);
-       /*border: solid 3px #6e7491;*/
-       /*clip-path: polygon(53% 10%, 100% 0, 100% 43%, 100% 100%, 68% 100%, 0 100%, 0 78%, 0 22%, 26% 12%);*/
-    	/*border-radius: 20px;*/
-    	border-top-left-radius: 37px 140px;
-	  border-top-right-radius: 23px 130px;
-	  border-bottom-left-radius: 110px 19px;
-	  border-bottom-right-radius: 70px 24px;
-	  /*box-shadow: rgba(0, 0, 0, 1) 0px 19px 43px;*/
-	  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;}
-</style>

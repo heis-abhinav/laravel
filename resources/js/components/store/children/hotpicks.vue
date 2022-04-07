@@ -3,7 +3,7 @@
 		<div class="container-hotpicks">
 		<link rel="stylesheet" type="text/css" href="/css/components/hotpicks.css">
 		<!-- <div class="row hp-parent justify-content-center"> -->
-			<div class="card hp-title"><h3>Hot Picks</h3></div>
+			<div class="card hp-title"><h3>{{title}}</h3></div>
 			
 			<div class="row hotpicks flex-row flex-nowrap">
 				<!-- <div class="jumbotron hotpicks mt-4 my-4" >  -->
@@ -26,6 +26,7 @@
 	export default{
 		data(){
 			return{
+				title: 'Hot Picks',
 				products : []
 			}
 		},
