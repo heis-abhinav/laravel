@@ -45,6 +45,15 @@ class ItemsController extends Controller
         return response()->json($items);
     }
     
+    public function getRecentArrivals(){
+        $items = Items::orderBy('id', 'asc')
+            ->get()
+            ->toArray();
+        return response()->json($items);
+    }
+
+
+
     public function store(Request $request){
 
         if($request->avatar){
