@@ -38,7 +38,7 @@
 		},
 		methods: {
 			get_avatar(image){
-               let photo = (this.image > 100) ? image : "/img/store/products/"+ image;
+               let photo = (image > 100) ? image : "/img/store/products/"+ image;
                return photo;
             },
 		}

@@ -12,7 +12,7 @@ class ItemsController extends Controller
 
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->middleware('auth', ['except'=> ['getHotProducts']]);
     }
 
     public function add_item_page(){
