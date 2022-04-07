@@ -31,4 +31,5 @@ Route::get('/admin/item/{id}', [App\Http\Controllers\ItemsController::class , 'v
 
 Route::get('/admin/dashboard', [App\Http\Controllers\ItemsController::class , 'view_admin_dashboard'])->name('dashboard');
 
-Route::get('/gethotpicks', [App\Http\Controllers\ItemsController::class, 'getHotProducts'])->middleware('guest');
+Route::get('/gethotpicks', [App\Http\Controllers\ItemsController::class, 'getHotProducts']);
+Route::get('/getrecentarrivals', [App\Http\Controllers\ItemsController::class, 'getRecentArrivals']);
