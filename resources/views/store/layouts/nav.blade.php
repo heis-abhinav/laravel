@@ -1,8 +1,8 @@
 @section('navigation')
-<nav class="navbar navbar-expand-md  shadow-sm">
+<nav class="navbar navbar-expand-md navbar-light bg-light fixed-top" id="topnavigation">
     <div class="container">
         <a class="navbar-brand" href="{{ url('/') }}">
-            {{ __('Foodelivery') }}
+            {{ __('Syntist Store') }}
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
             <span class="navbar-toggler-icon"></span>
@@ -30,8 +30,7 @@
                         </li>
                     @endif
                 @else
-                    <li class="nav-item"><a class="nav-link" href="{{ route('add-item') }}">{{ __('Add Item') }}</a></li>
-                    <li class="nav-item"><a class="nav-link" href="{{ route('view-items') }}">{{ __('View Items') }}</a></li>
+                     <li class="nav-item"><a class="nav-link" href="{{ route('dashboard') }}">{{ __('Dashboard') }}</a></li>
                     <li class="nav-item dropdown">
                         <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                             {{ Auth::user()->name }}
